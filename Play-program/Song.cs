@@ -18,6 +18,8 @@ public class Song : Media
 
     public List<Artist> Artists{get; set;}
 
+    public int Visits { get; set; }
+
     public override void Play()
     {
         Console.WriteLine("Increase volume");

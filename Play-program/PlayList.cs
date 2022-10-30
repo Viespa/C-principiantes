@@ -90,4 +90,53 @@ public class PlayList
     {
         return mediaList.Any(x => x.Title == title);
     }
+
+
+    public Song GetFirstSonfWithLess1Minute()
+    {
+        var song = mediaList.FirstOrDefault(x => x.Seconds < 60);
+
+        return song;
+    }
+
+
+    public Song GetLasSongWithLess1Minute()
+    {
+          var song = mediaList.LastOrDefault(x => x.Seconds < 60);
+          return song;
+    }
+
+    public List<Song> Top10()
+    {
+        return mediaList.OrderByDescending(X => x.Visits)
+                                                 .Take(10).ToList();
+        
+    }
+
+    public Song[] Bottom10()
+    {
+        return  mediaList.OrderBy(x => x.Visits)
+                                        .Take(10).ToArray();
+    }
+
+
+    public void GroupFromCategory()
+    {
+        mediaList.GroupBy(x => x.Category)
+                 .ToDictionary(x => x.Key);
+    }
+
+
+     public List<Song> Skip10Top20()
+    {
+        
+        return  mediaList.Skip(10).Take(10).ToList();
+    }
+
+
+    public List<Media> ToConvertMedia()
+    {
+        return mediaList.OfType<Media>().ToList();
+    }
+
 }
