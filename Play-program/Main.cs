@@ -39,12 +39,35 @@ class Main{
         ListExplanation();
         StackExplanation();
         QueueExplanation();
+        DictionaryExplanation();
        // List<int> numbers =  new List<int>();
 
     }
 
 
+    private static void DictionaryExplanation()
+    {
 
+        Dictionary<string, Client> clients =  new Dictionary<string, Client>();
+
+        clients.Add("00000000D" , new Client() {Name = "Joseph"});
+        
+        if(!clients.ContainsKey("00000000D"))
+        {
+           clients.Add("00000000D" , new Client() {Name = "Joseph"});
+        }
+        else
+        {
+            
+        }
+
+
+        clients["00000000D"] = new Client();
+
+        Client myCLient = clients["00000000D"];
+
+      
+    }
     private static void QueueExplanation()
     {
         Queue<int> queueNumbers = new Queue<int>();
@@ -69,7 +92,9 @@ class Main{
         List<int> numbers = new List<int>();
 
         numbers.Add(0);
-    
+        numbers.Add(1);
+
+       
     }
 
 
