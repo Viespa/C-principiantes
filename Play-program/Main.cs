@@ -64,10 +64,18 @@ class Main{
 
         clients["00000000D"] = new Client();
 
-        Client myCLient = clients["00000000D"];
+        Client myCLient = clients["00000000D"];  
 
-      
+        var elements = new List<KeyValue<string, Client>>();
+        elements.Add(new KeyValuePair<string, Client>("001", new Client()));
+        elements.Add(new KeyValuePair<string, Client>("002", new Client()));
+
+        //Utils.AddRangeDictionary(clients,elements);    
+
+        clients.AddRange(elements);
     }
+
+
     private static void QueueExplanation()
     {
         Queue<int> queueNumbers = new Queue<int>();

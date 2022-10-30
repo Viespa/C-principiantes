@@ -14,7 +14,7 @@ public class Media
 
     public virtual void Play()
     {
-        COnsole.WriteLine($"Playing {Title}")
+        Console.WriteLine($"Playing {Title}");
     }
 
 
