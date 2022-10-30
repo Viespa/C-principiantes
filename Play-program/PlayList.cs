@@ -15,19 +15,29 @@ public class PlayList<T, V, Z>
 public class PlayList<T>
 {
 
-    T[] mediaList = new T[] { };
-
+   List<T> mediaList = new List<T>();
+    
     public void Add(T media)
     {
-
+        list.Add(media);
+        
     }
     
 
     public void PlayAll()
     {
-        foreach (T media in mediaList)
+        foreach (T media in list)
         {
             Console.WriteLine(media);
+        }
+    }
+
+
+    public void Preview()
+    {
+        if (mediaList.Count > 0)
+        {
+            Console.WriteLine(mediaList[0]);       
         }
     }
 }
