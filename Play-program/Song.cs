@@ -14,16 +14,20 @@ public class Song : Media
 
     public ShelvePosition Position {get; set; }
 
+    public int Category { get; set; }
+
+    public List<Artist> Artists{get; set;}
+
     public override void Play()
     {
-        Console.WriteLine("Increase volume")
+        Console.WriteLine("Increase volume");
         base.Play();
     }
 
    
     public override string ToString()
     {
-        return $"Title:"{Title} Duration: {Seconds};
+        return $"Title:{Title} Duration: {Seconds}";
     }
    
 
