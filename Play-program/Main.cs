@@ -30,6 +30,9 @@ class Main{
 
         WriteLineSpecial<Song>(song, "Start with", "enjoy");
 
+
+        DownloadSong();
+
        // WriteLineSpecial<IEnumerable>();
 
         Console.WriteLine(song2.ToString);
@@ -97,6 +100,22 @@ class Main{
         salesSongs song = salesSongs.Pop();
     }
 
+
+    private static void DownloadSong()
+    {
+        DownloadService downloadService = new DownloadService();
+        byte[] song =  downloadService.Download("Dark side of the moon");
+    }
+
+
+    private async static void DownloadSongAsync()
+    {
+        DownloadService downloadService =  new DownloadService();
+        byte[] futureSong = await downloadService.DownloadAsync("Dark side of the moon");
+
+       
+        
+    }
     private static void ListExplanation()
     {
         List<int> numbers = new List<int>();
