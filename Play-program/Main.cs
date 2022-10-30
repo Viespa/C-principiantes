@@ -30,6 +30,8 @@ class Main{
 
         WriteLineSpecial<Song>(song, "Start with", "enjoy");
 
+       // WriteLineSpecial<IEnumerable>();
+
         Console.WriteLine(song2.ToString);
 
         Console.ReadKey();
@@ -106,8 +108,9 @@ class Main{
     }
 
 
-    static void WriteLineSpecial<T>(T data, string prefix, string suffix)
+    static void WriteLineSpecial<T>(T data, string prefix, string suffix) where T : new()
     {
-        Console.WriteLine($"{prefix} {data} {suffix}");
+        T myNewType = new T();
+        Console.WriteLine($"{prefix} {data.Title} {suffix}");
     }
 }

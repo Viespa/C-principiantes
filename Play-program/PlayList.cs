@@ -12,10 +12,10 @@ public class PlayList<T, V, Z>
 
 
 
-public class PlayList
+public class PlayList<T> where T : song
 {
 
-   List<Song> mediaList = new List<Song>();
+   List<T> mediaList = new List<T>();
     
     public void Add(T media)
     {
@@ -26,7 +26,7 @@ public class PlayList
 
     public void PlayAll()
     {
-        foreach (Song media in list)
+        foreach (T media in list)
         {
             Console.WriteLine(media);
         }
@@ -42,7 +42,7 @@ public class PlayList
     }
 
 
-    public List<Song> SearchForCategory(string category)
+    public List<T> SearchForCategory(string category)
     {
 
 
@@ -53,9 +53,9 @@ public class PlayList
     }
 
 
-    public List<Song> SearchForTitle(string title)
+    public List<T> SearchForTitle(string title)
     {
-        List<Song> songs = new LIst<Song>();
+        List<T> songs = new List<T>();
 
          foreach (Song song in mediaList)
         {
@@ -106,7 +106,7 @@ public class PlayList
           return song;
     }
 
-    public List<Song> Top10()
+    public List<T> Top10()
     {
         return mediaList.OrderByDescending(X => x.Visits)
                                                  .Take(10).ToList();
@@ -127,7 +127,7 @@ public class PlayList
     }
 
 
-     public List<Song> Skip10Top20()
+     public List<T> Skip10Top20()
     {
         
         return  mediaList.Skip(10).Take(10).ToList();
